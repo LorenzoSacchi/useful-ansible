@@ -1,0 +1,9 @@
+---
+- name: test vars
+  hosts: localhost
+  become: yes
+  user: root
+  gather_facts: false
+  roles:
+  - var-output
+  

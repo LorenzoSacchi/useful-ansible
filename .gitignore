@@ -1,0 +1,4 @@
+.gradle
+.idea/
+*.pyc
+.DS_Store
