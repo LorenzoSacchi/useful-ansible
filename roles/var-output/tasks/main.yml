@@ -1,4 +1,4 @@
 ---
 - name: echo the var passed
   debug:
-    msg: "{{ single_var }}"
+    msg: "{{ inventory_hostname }}"
