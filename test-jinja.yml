@@ -1,1 +1,8 @@
 ---
+- name: test a jinja file
+  hosts: all
+  become: yes
+  user: root
+  gather_facts: true 
+  role:
+  - jinjafile
