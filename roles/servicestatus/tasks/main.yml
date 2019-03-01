@@ -1,0 +1,29 @@
+---
+
+#disable and stop, then gather service facts and print the status
+- name: stop service
+  systemd:
+    state: stopped
+    enabled: no
+    name: docker
+
+- name: service_facts
+  service_facts:
+
+- debug:
+    var: ansible_facts.services['docker.service'].state
+
+
+#enable and start, then gather service facts and print the status (all json displayed)
+- name: start service
+  systemd:
+    state: started
+    enabled: yes
+    name: docker
+
+- name: service_facts
+  service_facts:
+
+- debug:
+    var: ansible_facts
+

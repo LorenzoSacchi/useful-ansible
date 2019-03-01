@@ -1,0 +1,9 @@
+---
+- name: check service status
+  hosts: all
+  become: yes
+  user: root
+  gather_facts: true
+  roles:
+  - servicestatus
+  
