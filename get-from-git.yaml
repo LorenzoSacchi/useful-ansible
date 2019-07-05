@@ -1,0 +1,5 @@
+- name: get files from git
+  gather_facts: false
+  hosts: machine
+  roles:          
+  - files-from-git

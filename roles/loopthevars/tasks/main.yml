@@ -1,0 +1,6 @@
+- name: "loop through list from a variable"
+  debug: 
+    msg: "{{ item }}"
+  with_file: 
+    - somefile
+  delegate_to: localhost

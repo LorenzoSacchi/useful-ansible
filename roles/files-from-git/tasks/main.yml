@@ -1,0 +1,11 @@
+- name: get files from a git repo
+  git:
+    repo: https://github.com/sky-uk/disco-proxima
+    dest: /Users/lsa27/Documents/others
+    force: yes
+  delegate_to: localhost
+  
+
+
+
+#git+ssh://git@github.com/sky-uk/

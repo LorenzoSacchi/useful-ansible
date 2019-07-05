@@ -1,2 +1,5 @@
 [local]
 centos
+
+[machine]
+localhost

@@ -1,0 +1,7 @@
+---
+
+- name: loop trough a list inside a role
+  gather_facts: false
+  hosts: machine
+  roles:          
+  - loopthevars
