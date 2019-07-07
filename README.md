@@ -8,4 +8,7 @@ ansible-playbook -i <inventory> test-vars.yml
 put the template in 
 ansible-playbook -i <inventory> test-jinja.yml
 
+* add service status
+test ansible that logs the status of a systemd services
+
 This is a WIP. Not completely tested yet
