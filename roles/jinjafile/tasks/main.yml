@@ -3,3 +3,4 @@
   template:
     src: template-file.j2
     dest: /Users/lsa27/Documents/template-output
+  delegate_to: localhost

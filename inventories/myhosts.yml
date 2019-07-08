@@ -1,5 +1,5 @@
 [local]
-centos
+virtual
 
-[machine]
-localhost
+[local2]
+192.168.56.101
