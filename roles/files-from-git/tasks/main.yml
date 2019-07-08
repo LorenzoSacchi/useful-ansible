@@ -1,6 +1,6 @@
 - name: get files from a git repo
   git:
-    repo: https://github.com/sky-uk/disco-proxima
+    repo: https://github.com/LorenzoSacchi/Blackjack
     dest: /Users/lsa27/Documents/others
     force: yes
   delegate_to: localhost
