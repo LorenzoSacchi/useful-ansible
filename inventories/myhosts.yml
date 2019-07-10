@@ -1,5 +1,24 @@
-[local]
-virtual
+all:
+  children:
+    local:
+      hosts:
+        local
+    local2:
+      hosts:
+          192.168.56.101
+    generic:
+      children:
+        local:
+        local2:
 
-[local2]
-192.168.56.101
+
+#[local]
+#virtual
+
+#[local2]
+#192.168.56.101
+
+
+#[generic:children]
+#local
+#local2

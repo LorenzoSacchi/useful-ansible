@@ -4,15 +4,19 @@
     msg: "{{ inventory_hostname }}"
 
 - name: catch the file name based on group
-  local_action: stat path={{ role_path }}/files/{{ group_names[0] }}.conf
+  local_action: stat path={{ role_path }}/files/{{ group_names[-1] }}.conf
   register: there_it_is
   become: false
 
 - name: echo the group name
   debug:
-    msg: "{{ group_names[0] }}"
+    msg: "{{ group_names[-1] }}"
   when: there_it_is.stat.exists
 
 - name: the role path
   debug:
     msg: "{{ role_path }}"
+
+- name: echo all group name
+  debug:
+    msg: "{{ group_names[-1] }}"

@@ -1,11 +1,21 @@
-- name: get files from a git repo
-  git:
-    repo: https://github.com/LorenzoSacchi/Blackjack
-    dest: /Users/lsa27/Documents/others
-    force: yes
-  delegate_to: localhost
+#- name: get files from a git repo
+#  git:
+#    repo: https://github.com/LorenzoSacchi/Blackjack
+#    dest: /Users/lsa27/Documents/others
+#    force: yes
+#  delegate_to: localhost
+
   
 
 
 
 #git+ssh://git@github.com/sky-uk/
+
+- name: clone all dashboards
+  git:
+    repo: git@github.com:LorenzoSacchi/Blackjack
+    version: dcos-dashboards
+    dest: "{{ role_path }}/files/dashboards"
+    accept_hostkey: yes
+  become: no
+  delegate_to: localhost
