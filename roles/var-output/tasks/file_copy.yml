@@ -1,0 +1,11 @@
+---
+
+- name: see if file exists
+  local_action: stat path={{ role_path }}/files/{{ groups }}.conf
+  register: file
+  become: false
+- name: copy it
+  copy:
+    src: "{{ role_path }}/files/{{ groups }}.conf"
+    dest: "/tmp/{{ item }}.conf"
+    when: file.stats.exists

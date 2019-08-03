@@ -1,4 +1,3 @@
----
 - name: echo the var passed
   debug:
     msg: "{{ inventory_hostname }}"
@@ -20,3 +19,29 @@
 - name: echo all group name
   debug:
     msg: "{{ group_names[-1] }}"
+
+
+- name: create list
+  set_fact: 
+    list: "{{ list }} + [ '{{ item }}' ]"
+  with_items: "{{ group_names }}"
+
+- name: print fact
+  debug:
+    var: "list"
+
+
+#- name: print all facts
+#  debug: 
+#    msg: "{{hostvars}}"
+
+#- name: copy files from external file, not working
+#  include: file_copy.yml groups={{ item }}
+#  with_items: "{{ group_names[:] }}"
+
+- name: copy it, bad version
+  copy:
+    src: "{{ role_path }}/files/{{ item }}.conf"
+    dest: "/tmp/{{ item }}.conf"
+  with_items: "{{ group_names }}"
+  failed_when: false
